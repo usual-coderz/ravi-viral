@@ -368,7 +368,10 @@ function openVideo(src) {
     const modal = document.getElementById("videoModal");
     const video = document.getElementById("mainVideo");
 
-    video.src = src;
+    video.innerHTML = `<source src="${src}" type="video/mp4">`;
+    video.load();
+    video.play();
+
     modal.style.display = "flex";
 }
 
