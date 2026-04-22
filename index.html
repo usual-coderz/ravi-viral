@@ -368,11 +368,14 @@ function openVideo(src) {
     const modal = document.getElementById("videoModal");
     const video = document.getElementById("mainVideo");
 
+    modal.style.display = "flex";
+
     video.innerHTML = `<source src="${src}" type="video/mp4">`;
     video.load();
-    video.play();
 
-    modal.style.display = "flex";
+    video.onloadeddata = () => {
+        video.play().catch(() => {});
+    };
 }
 
 function closeVideo() {
