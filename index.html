@@ -1,43 +1,244 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8" /><title>LeakBase</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium UI</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
 <style>
-body {background-color: #f2f2f2;}
-.content {display: flex; flex-wrap: wrap;}
-.block {width: 45%; margin: 1%; border-radius: 10px; padding: 10px; background-color: white;}
-.left {width: 80%; margin-left: 20%;}
-.right {width: 20%; position: fixed; right: 0; top: 80px;}
-.title {font-size: 24px; font-weight: bold; margin-top: 20px;}
-.block-title {font-size: 18px; font-weight: bold;}
-.block-text {font-size: 14px; margin-top: 5px; line-height: 1.5em;}
-.block-text p {margin: 5px 0;}
-.nav {background-color: #333; position: fixed; left: 0; top: 0; width: 15%; height: 100%; overflow: auto;}
-.nav a {color: white; display: block; padding: 10px; text-decoration: none;}
-.nav a:hover {background-color: #ddd; color: black;}
-.active {background-color: #4CAF50;}
-.nav-title {color: white; font-size: 24px; font-weight: bold; padding: 10px;}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0b0b0f, #11121a, #1a1b26);
+    color: #eaeaf0;
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 8%;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.nav-links a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #aaa;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 100px 10%;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    color: #aaa;
+    max-width: 600px;
+    margin: auto;
+}
+
+.hero button {
+    margin-top: 30px;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #6a5cff, #8b7dff);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hero button:hover {
+    transform: translateY(-3px);
+    opacity: 0.9;
+}
+
+/* FEATURES */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    padding: 80px 10%;
+}
+
+.card {
+    padding: 25px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    background: rgba(255,255,255,0.08);
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #aaa;
+}
+
+/* PRICING */
+.pricing {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.pricing h2 {
+    margin-bottom: 40px;
+}
+
+.price-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.price-box {
+    padding: 30px;
+    width: 280px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    transition: 0.3s;
+}
+
+.price-box:hover {
+    transform: scale(1.03);
+}
+
+.price-box h3 {
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 32px;
+    margin: 15px 0;
+}
+
+.price-box button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    background: #6a5cff;
+    color: white;
+    cursor: pointer;
+}
+
+/* FOOTER */
+.footer {
+    padding: 40px 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    color: #aaa;
+}
+
+.footer div {
+    margin-bottom: 15px;
+}
 </style>
 </head>
+
 <body>
-<div class='nav'>
-<div class='nav-title'>Table of Contents</div>
-<a href='#p1'><b>💾HiTeckGroop.in</b></a>
-<a href='#p2'><b>🇮🇳TrueCaller India</b></a>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">Qubyn</div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Pricing</a>
+    </div>
 </div>
-<div class='left'>
-<div class='content'>
-<div id='p1' class='block'>
-<div class='block-title'><b>💾HiTeckGroop.in</b></div>
-<div class='block-text'><br>At the beginning of 2025, a huge leak with the data of Indian cellular operators began to spread on the network. The HITECKGROOP website is declared as a source, but this information is unverified. The data contains 1.8 billion records, however, the number of unique users below, about 300 million. Each record indicated the full name, the name of the father, and the number of the document. Most often this is the Aadhaar number, but the taxpayer’s passports or numbers were also found. There were up to two phones in each line, however, since several records had several records for one user, the total number of well -known phones sometimes reached several tens. Some records also had nicknames and emails.<br><br><b>📞Telephone: </b> <code>919978460317</code><br><b>📞Telephone: </b> <code>918200840595</code><br><b>🏘️Adres: </b> 1,Nana Giriyatal DIST AMRELI,Amreli,Amreli,Amreli,Gujarat,365601<br><b>🃏Document number: </b> GJ1420140009852<br><b>👤Full name: </b> Dhirubhai DABHI<br><b>👨The name of the father: </b> Sanjaybhai D Dabhi<br><b>🗺️ Region: </b> JIO GUJARAT<br><br></div>
-</div>
-<div id='p2' class='block'>
-<div class='block-title'><b>🇮🇳TrueCaller India</b></div>
-<div class='block-text'><br>In February 2019, “The best application for identifying the provocative subscriber and spam blocking” TrueCaller was leaked to data from which 286 million Indian users suffered. Phones, telephone operators, full names, gender, location, positions of companies, mail, websites, Facebook identifiers and Twitter users' names were disclosed.<br><br><b>📞Telephone: </b> <code>918200840595</code><br><b>🏘️Adres: </b> Gujarat <br><b>🇮🇳 Indian state: </b> Gujarat<br><b>👤Full name: </b> Vanrajsinh<br><b>📡Mobile operator: </b> Reliance Jio<br><br></div>
-</div>
-</div>
-</div>
-<div class='right'>
-</div>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Experience Premium Access</h1>
+    <p>Elegant, minimal and exclusive platform designed with modern aesthetics and smooth experience.</p>
+    <button>Get Started</button>
+</section>
+
+<!-- FEATURES -->
+<section class="features">
+    <div class="card">
+        <h3>Private Access</h3>
+        <p>Secure and exclusive environment with smooth user experience.</p>
+    </div>
+
+    <div class="card">
+        <h3>High Quality</h3>
+        <p>Carefully crafted design and performance optimized platform.</p>
+    </div>
+
+    <div class="card">
+        <h3>Premium Feel</h3>
+        <p>Minimal UI with elegant visuals and soft interactions.</p>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing">
+    <h2>Pricing</h2>
+    <div class="price-cards">
+        <div class="price-box">
+            <h3>Basic</h3>
+            <div class="price">₹499</div>
+            <button>Choose</button>
+        </div>
+
+        <div class="price-box">
+            <h3>Pro</h3>
+            <div class="price">₹999</div>
+            <button>Choose</button>
+        </div>
+
+        <div class="price-box">
+            <h3>Premium</h3>
+            <div class="price">₹1999</div>
+            <button>Choose</button>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div>© 2026 Qubyn</div>
+    <div>Privacy • Terms • Contact</div>
+</footer>
+
 </body>
 </html>
