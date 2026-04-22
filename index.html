@@ -24,16 +24,21 @@ body {
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 20px 8%;
+    padding: 15px 6%;
+    align-items: center;
 }
 
 .logo {
     font-weight: 600;
-    font-size: 18px;
+}
+
+.nav-links {
+    display: flex;
 }
 
 .nav-links a {
-    margin-left: 25px;
+    margin-left: 18px;
+    font-size: 14px;
     color: #aaa;
     text-decoration: none;
 }
@@ -45,24 +50,28 @@ body {
 /* HERO */
 .hero {
     text-align: center;
-    padding: 80px 10%;
+    padding: 60px 5%;
 }
 
 /* ALBUM */
 .album {
     display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin-bottom: 40px;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.album::-webkit-scrollbar {
+    display: none;
 }
 
 .album img {
-    width: 180px;
-    height: 240px;
+    min-width: 140px;
+    height: 200px;
     object-fit: cover;
-    border-radius: 14px;
-    transition: 0.3s;
+    border-radius: 12px;
     cursor: pointer;
+    transition: 0.3s;
 }
 
 .album img:hover {
@@ -70,28 +79,31 @@ body {
 }
 
 .hero h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+    font-size: 28px;
+    margin-top: 20px;
 }
 
 .hero p {
+    font-size: 14px;
     color: #aaa;
-    max-width: 600px;
-    margin: auto;
+    margin-top: 10px;
 }
 
 /* BUTTONS */
 .btns {
-    margin-top: 25px;
+    margin-top: 20px;
 }
 
 .btn {
-    padding: 12px 25px;
+    width: 90%;
+    max-width: 260px;
+    padding: 12px;
     border-radius: 25px;
     border: none;
-    margin: 10px;
+    margin: 8px auto;
+    display: block;
+    font-size: 14px;
     cursor: pointer;
-    font-weight: 500;
 }
 
 .contact {
@@ -105,89 +117,136 @@ body {
     color: #aaa;
 }
 
-.btn:hover {
-    opacity: 0.9;
-}
-
 /* VIDEO MODAL */
 .video-modal {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.8);
+    inset: 0;
+    background: rgba(0,0,0,0.9);
     display: none;
     justify-content: center;
     align-items: center;
+    padding: 15px;
 }
 
-.video-modal video {
-    width: 80%;
+.video-box {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+}
+
+.video-box video {
+    width: 100%;
     border-radius: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #000;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
 /* FEATURES */
 .features {
+    padding: 40px 5%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 20px;
-    padding: 60px 10%;
+    gap: 15px;
 }
 
 .card {
     background: rgba(255,255,255,0.05);
-    padding: 20px;
-    border-radius: 14px;
+    padding: 18px;
+    border-radius: 12px;
+}
+
+.card h3 {
+    font-size: 16px;
 }
 
 /* PRICING */
 .pricing {
-    padding: 60px 10%;
+    padding: 40px 5%;
     text-align: center;
 }
 
 .price-cards {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    gap: 15px;
 }
 
 .price-box {
     background: rgba(255,255,255,0.05);
-    padding: 25px;
-    border-radius: 14px;
-    width: 260px;
+    padding: 20px;
+    border-radius: 12px;
 }
 
 .price {
-    font-size: 28px;
-    margin: 15px 0;
+    font-size: 24px;
+    margin: 10px 0;
 }
 
 .buy-btn {
-    padding: 10px 20px;
+    width: 100%;
+    padding: 10px;
     border-radius: 20px;
     border: none;
     background: #6a5cff;
     color: white;
-    cursor: pointer;
 }
 
 /* FOOTER */
 .footer {
-    padding: 30px 10%;
+    padding: 25px 5%;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+}
+
+/* DESKTOP */
+@media(min-width:768px){
+
+.hero h1 {
+    font-size: 42px;
+}
+
+.album {
+    justify-content: center;
+    overflow: visible;
+}
+
+.album img {
+    min-width: 180px;
+    height: 240px;
+}
+
+.btn {
+    display: inline-block;
+    width: auto;
+    padding: 12px 25px;
+}
+
+.price-cards {
+    grid-template-columns: repeat(3,1fr);
+}
+
+.features {
+    grid-template-columns: repeat(3,1fr);
+}
+
+.footer {
     display: flex;
     justify-content: space-between;
-    color: #aaa;
+}
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
     <div class="logo">Qubyn</div>
     <div class="nav-links">
@@ -197,37 +256,37 @@ body {
     </div>
 </div>
 
-<!-- HERO -->
 <section class="hero">
 
-    <!-- ALBUM -->
-    <div class="album">
-        <img src="https://via.placeholder.com/200x250" onclick="openVideo()">
-        <img src="https://via.placeholder.com/200x250" onclick="openVideo()">
-        <img src="https://via.placeholder.com/200x250" onclick="openVideo()">
-    </div>
+<div class="album">
+    <img src="https://via.placeholder.com/200x250" onclick="openVideo()">
+    <img src="https://via.placeholder.com/200x250" onclick="openVideo()">
+    <img src="https://via.placeholder.com/200x250" onclick="openVideo()">
+</div>
 
-    <h1>Exclusive Premium Access</h1>
-    <p>Minimal, aesthetic and private premium experience.</p>
+<h1>Exclusive Premium Access</h1>
+<p>Minimal, aesthetic and private premium experience.</p>
 
-    <div class="btns">
-        <a href="https://t.me/sampleuser" target="_blank">
-            <button class="btn contact">Contact</button>
-        </a>
+<div class="btns">
+    <a href="https://t.me/sampleuser" target="_blank">
+        <button class="btn contact">Contact</button>
+    </a>
 
-        <button class="btn demo" onclick="openVideo()">Demo</button>
-    </div>
+    <button class="btn demo" onclick="openVideo()">Demo</button>
+</div>
 
 </section>
 
 <!-- VIDEO -->
-<div class="video-modal" id="videoModal" onclick="closeVideo()">
-    <video controls>
-        <source src="sample.mp4" type="video/mp4">
-    </video>
+<div class="video-modal" id="videoModal">
+    <div class="video-box">
+        <span class="close-btn" onclick="closeVideo()">✕</span>
+        <video controls>
+            <source src="sample.mp4" type="video/mp4">
+        </video>
+    </div>
 </div>
 
-<!-- FEATURES -->
 <section class="features">
     <div class="card">
         <h3>Private Access</h3>
@@ -236,7 +295,7 @@ body {
 
     <div class="card">
         <h3>High Quality</h3>
-        <p>Premium level performance and visuals.</p>
+        <p>Premium performance & visuals.</p>
     </div>
 
     <div class="card">
@@ -245,7 +304,6 @@ body {
     </div>
 </section>
 
-<!-- PRICING -->
 <section class="pricing">
     <h2>Pricing</h2>
 
@@ -253,24 +311,23 @@ body {
         <div class="price-box">
             <h3>Basic</h3>
             <div class="price">₹499</div>
-            <button class="buy-btn" onclick="alert('DM @ghjj to buy')">Buy</button>
+            <button class="buy-btn" onclick="buy()">Buy</button>
         </div>
 
         <div class="price-box">
             <h3>Pro</h3>
             <div class="price">₹999</div>
-            <button class="buy-btn" onclick="alert('DM @ghjj to buy')">Buy</button>
+            <button class="buy-btn" onclick="buy()">Buy</button>
         </div>
 
         <div class="price-box">
             <h3>Premium</h3>
             <div class="price">₹1999</div>
-            <button class="buy-btn" onclick="alert('DM @ghjj to buy')">Buy</button>
+            <button class="buy-btn" onclick="buy()">Buy</button>
         </div>
     </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
     <div>© 2026 Qubyn</div>
     <div>Privacy • Terms</div>
@@ -283,6 +340,10 @@ function openVideo() {
 
 function closeVideo() {
     document.getElementById("videoModal").style.display = "none";
+}
+
+function buy() {
+    alert("DM @ghjj to buy");
 }
 </script>
 
